@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Fecha Compra: 2017-02-08
+  Monto: 
+  Cliente: MyString
+
+two:
+  Fecha Compra: 2017-02-08
+  Monto: 
+  Cliente: MyString

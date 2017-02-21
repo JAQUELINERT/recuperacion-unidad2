@@ -1,0 +1,33 @@
+<h1>Lista de Preguntas</h1>
+<p> Total: <%= @questions.size %></p>
+<p><%= link_to 'Nueva Pregunta', new_question_path,  :class=>'btn btn-success btn-sm' %></p>
+<div class="table-responsive">
+  <table class="table table-condensed" border="1">
+  <tr>
+    <th>Pregunta</th>
+    <th>Opciones</th>
+    <th colspan="3">Opciones</th>
+  </tr>
+  <% @questions.each do |question| %>
+  <tr>
+    <td><%=question.text%></td>
+    <td>
+    <ul>
+    <% question.choices.each do |choice| %>
+    <li>
+          <%=choice.text%>
+          <%if choice.correct%>(Correct)<%end%>
+          </li>
+          <% end %>
+      </ul>
+      </td>
+    <td><%= link_to 'Ver', question , :class=>'btn btn-info btn-sm'%></td>
+    <td><%= link_to 'Editar', edit_question_path(question),  :class=>'btn btn-warning btn-sm'%></td>
+    <td><%= link_to 'Borrar', question,:method => :delete,  :confirm => '¿La pregunta sera borrada esta seguro?' , :class=>'btn btn-danger btn-sm'%></td>
+  </tr>
+  <% end %>
+</table>
+  </div>
+<%content_for(:title) do %>
+    Lista de Preguntas
+<% end %>

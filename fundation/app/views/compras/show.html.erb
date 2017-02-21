@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @compra.FechaCompra %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @compra.Monto %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @compra.Cliente %>
+</p>
+
+<%= link_to 'Editar', edit_compra_path(@compra),class:'button radius success'%> |
+<%= link_to 'Atras', compras_path, class:'button radius secondary' %>

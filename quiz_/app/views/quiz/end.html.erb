@@ -1,0 +1,11 @@
+<h1>Resultado</h1>
+<p id="question"> Tu contestaste correctamente <%= @correct %> preguntas de <%=@total%> preguntas.</p>
+<p id="scorre"><%=@score%> % de 100%</p>
+<%= form_tag({:controller=>'quiz', :action=>'index'}, :method => 'get') do %>
+<div class="center">
+    <%=submit_tag('Tomar otro quiz', :class=> 'submit btn btn-success btn-sm')%>
+</div>
+<% end %>
+<% content_for(:title) do %>
+Quiz results
+<% end %>
